@@ -1,4 +1,4 @@
- package demo01;
+ package lab01demo;
 
 public class classandMethod {
     private int score = 0 , PositionX = 0 , PositionY = 0;

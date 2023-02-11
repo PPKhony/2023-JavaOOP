@@ -1,3 +1,4 @@
+package lab01demo;
 public class typecasting {
     public static void main(String[] args) {
         int a = 5;

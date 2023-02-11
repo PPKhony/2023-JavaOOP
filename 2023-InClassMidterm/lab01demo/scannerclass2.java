@@ -1,3 +1,4 @@
+package lab01demo;
 import java.util.Scanner;
 
 	public class scannerclass2{

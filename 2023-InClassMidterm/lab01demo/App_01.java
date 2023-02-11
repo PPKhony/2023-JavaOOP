@@ -1,3 +1,4 @@
+package lab01demo;
 /*
  * การสร้าง object
  */
