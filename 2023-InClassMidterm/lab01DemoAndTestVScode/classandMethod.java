@@ -1,4 +1,4 @@
- package lab01demo;
+ package lab01DemoAndTestVScode;
 
 public class classandMethod {
     private int score = 0 , PositionX = 0 , PositionY = 0;

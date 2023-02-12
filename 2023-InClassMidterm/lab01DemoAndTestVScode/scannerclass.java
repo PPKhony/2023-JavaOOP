@@ -1,4 +1,4 @@
-package lab01demo;
+package lab01DemoAndTestVScode;
 import java.util.Scanner;
 
 public class scannerclass {

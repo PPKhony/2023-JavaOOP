@@ -1,4 +1,4 @@
-package lab01demo;
+package lab01DemoAndTestVScode;
 /*
  * การสร้าง object
  */
