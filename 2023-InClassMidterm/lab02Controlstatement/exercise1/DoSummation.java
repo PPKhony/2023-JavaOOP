@@ -1,5 +1,5 @@
 package lab02Controlstatement.exercise1;
-import java.util.Scanner;
+import java.util.*;
 
 public class DoSummation {
     public static void main(String[] args) {
