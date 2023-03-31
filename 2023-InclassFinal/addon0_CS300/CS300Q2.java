@@ -1,3 +1,4 @@
+package addon0_CS300;
 import java.util.*;
 public class CS300Q2 {
     public static void main(String[] args) {

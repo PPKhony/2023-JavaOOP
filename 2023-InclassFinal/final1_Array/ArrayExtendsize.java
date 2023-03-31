@@ -1,5 +1,4 @@
 package final1_Array;
-import java.util.*;
 
 public class ArrayExtendsize{
     public static int[] doubleCapacity(int[] d) {

@@ -1,0 +1,72 @@
+package final3_Junit;
+
+import org.junit.jupiter.api.*;
+
+/**
+ * PointJUnitTest
+ */
+//มี Overloading สำหรับ Custom error
+public class PointJUnitTest {
+    // Setup และ Teardown ค่าในการทดสอบแต่ละครั้ง
+    @BeforeEach
+    void setup() {
+        System.out.println("Before Test");
+        p1 = new Point(
+                Integer.MAX_VALUE,
+                Integer.MAX_VALUE);
+    }
+
+    @AfterEach
+    void tearDown() {
+    }
+
+    // Boundary values
+    @Test
+    public void testConstrMaxBoundary() {
+        assertEquals((double) Integer.MAX_VALUE,
+                (double) (p1.getX()),
+                "X should be equal to MAX INT");
+        assertEquals((double) Integer.MAX_VALUE,
+                (double) (p1.getY()),
+                "Y should be equal to MAX INT");
+    }
+
+    //Conditoinal path
+    //ใช้เช็ค confirm ว่า p1 กับ p2 เป็นคนละจุดกัน
+    //ทดสอบจุด 2 จุดที่พิกัดแกน X คนละค่ากัน ดังนั้นจุดทั้ง 2 จุดจึงเป็นคนให้คำตอบผิด
+    @Test
+    void testNotSamePoint_X() {
+        Point p2 = new Point(Integer.MIN_VALUE, Integer.MAX_VALUE);
+        assertFalse(p1.isTheSame(p2),
+                "To be the same point, Coordinate X must be the same");
+    } 
+
+    //ทดสอบด้วยพารามิเตอร์หลายค่า 
+    @ParameterizedTest 
+    @ValueSources(ints = {-1 , 0 , Integer.MAX_VALUE}) 
+    void testSetpoint(int v) {
+        p1.setpoint(v, v);
+        assertEquals(v, p1.getX());
+        assertEquals(v, p1.getY());
+        }
+    
+    //Mark ไว้ว่าไม่ต้องทดสอบ
+    @Disabled 
+    
+    //ทำตามจำนวนครั้งที่ระบุ
+    @RepeatedTest(value = 5, name = "{displayName} {currentRepetition}/{totalRepetitions}")
+    @DisplayName("RepeatingTest")
+    void repeatedTestSetPoint(RepetitionInfo repInfo) {
+        int i = 3;
+        p1.setpoint(repInfo.getCurrentRepetition(), 
+            repInfo.getCurrentRepetition());
+        assertEquals(repInfo.getCurrentRepetition(), p1.getX());
+        assertEquals(i, p1.getY());
+    }
+
+    @BeforeAll //execute รอบเดียวก่อนทดสอบ
+}
+
+    
+
+    
